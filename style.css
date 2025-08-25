@@ -270,3 +270,58 @@ footer {
   font-size: 0.8em;
   font-weight: bold;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Matters Blog</title>
+  <link rel="stylesheet" href="style.css"> <!-- your main CSS file -->
+</head>
+<body>
+
+<div class="header">
+  <h2>Mind Matters Blog</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Sleep Tips for Teens</h2>
+      <h5>August 25, 2025</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Learn how small changes in your sleep schedule can improve focus, mood, and memory.</p>
+    </div>
+    <div class="card">
+      <h2>Social Media & Mental Health</h2>
+      <h5>August 18, 2025</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Explore the effects of screen time on your brain and how to maintain healthy habits online.</p>
+    </div>
+  </div>
+
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Hi! I’m Nila, a teen interested in brain health, science, and creating helpful resources for other teens.</p>
+    </div>
+    <div class="card">
+      <h3>Popular Posts</h3>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Instagram | Twitter | TikTok</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Mind Matters © 2025</h2>
+</div>
+
+</body>
+</html>
