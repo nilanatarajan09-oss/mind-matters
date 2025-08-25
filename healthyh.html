@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healthy Habits | Mind Matters</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Mind Matters</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="your-brain.html">Your Brain</a>
+      <a href="habits.html">Your Habits</a>
+      <a href="healthyh.html">Healthy Habits</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>🌱 Build Healthy Habits for Better Mental Health</h2>
+    <p style="text-align:center;">Click on a habit below to reveal tips and challenges you can try today!</p>
+
+    <div class="habit-container">
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">😴 Sleep Hygiene</div>
+        <div class="habit-details">
+          <p>Keep a consistent sleep schedule and avoid screens 1 hour before bed.</p>
+          <span class="challenge">Try This!</span>
+          <p>Start a 30-minute wind-down routine tonight.</p>
+        </div>
+      </div>
+
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">🧘 Mindfulness</div>
+        <div class="habit-details">
+          <p>Practice being present with your breath or surroundings for a few minutes daily.</p>
+          <span class="challenge">Try This!</span>
+          <p>Use a guided meditation app for 5 minutes today.</p>
+        </div>
+      </div>
+
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">🏃‍♀️ Physical Activity</div>
+        <div class="habit-details">
+          <p>Exercise releases feel-good chemicals and reduces stress.</p>
+          <span class="challenge">Try This!</span>
+          <p>Take a 15-minute walk or stretch break this afternoon.</p>
+        </div>
+      </div>
+
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">💬 Social Connection</div>
+        <div class="habit-details">
+          <p>Connecting with friends or family helps boost mood and reduces loneliness.</p>
+          <span class="challenge">Try This!</span>
+          <p>Reach out to someone you haven’t talked to in a while.</p>
+        </div>
+      </div>
+
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">📵 Limit Social Media</div>
+        <div class="habit-details">
+          <p>Reducing social media time can improve focus and decrease anxiety.</p>
+          <span class="challenge">Try This!</span>
+          <p>Set a 1-hour social media limit today.</p>
+        </div>
+      </div>
+
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">🥗 Healthy Eating</div>
+        <div class="habit-details">
+          <p>Food fuels your brain and body. Eating balanced meals helps focus and mood.</p>
+          <span class="challenge">Try This!</span>
+          <p>Swap one junk snack for fruit or nuts today.</p>
+        </div>
+      </div>
+
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">📖 Learning & Growth</div>
+        <div class="habit-details">
+          <p>Challenging your brain with new skills builds resilience and confidence.</p>
+          <span class="challenge">Try This!</span>
+          <p>Spend 15 minutes learning something new (language, coding, music).</p>
+        </div>
+      </div>
+
+      <div class="habit-card" onclick="toggleDetails(this)">
+        <div class="habit-title">🌳 Time in Nature</div>
+        <div class="habit-details">
+          <p>Being outdoors lowers stress and improves mental clarity.</p>
+          <span class="challenge">Try This!</span>
+          <p>Take a walk outside and notice 3 things you see, hear, and smell.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:280px;">
+      <h2>🌟 Why Healthy Habits Matter</h2>
+      <p>
+        Building good habits as a teen shapes your brain for life. Sleep, nutrition, exercise, and 
+        mindfulness all boost your focus, creativity, and emotional balance. The earlier you start, 
+        the stronger the impact on your mental health and future.
+      </p>
+      <p>
+        Think of habits as “brain fuel” — small actions today that give you long-term power. 💪
+      </p>
+    </div>
+    <div style="flex:1; min-width:280px; text-align:center;">
+      <img src="images/healthy-lifestyle.jpg" alt="Teens practicing healthy lifestyle" style="max-width:100%; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+    </div>
+  </section>
+
+  <footer>
+    <p>Created by Nila Natarajan | MAGIC STEM Internship 2025</p>
+  </footer>
+
+  <script>
+    function toggleDetails(card) {
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

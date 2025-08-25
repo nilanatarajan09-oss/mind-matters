@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Habits | Mind Matters</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Mali', sans-serif;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      margin: 5% auto;
+      background: #fff;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 700px;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .section img {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .section img:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mind Matters</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="your-brain.html">Your Brain</a>
+      <a href="habits.html">Your Habits</a>
+      <a href="healthyh.html">Healthy Habits</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>😴 Sleep</h2>
+    <p>Teens should get 8–10 hours of sleep per night but most get much less. According to the CDC, nearly 73% of high school students report not getting enough sleep on school nights. Sleep deprivation is linked to increased risk of depression, anxiety, poor academic performance, and even suicidal ideation.</p>
+    <p>Scientifically, sleep is when your brain performs essential maintenance. The glymphatic system clears out toxins, and your hippocampus helps consolidate memories. Lack of sleep weakens the prefrontal cortex — the brain’s decision-making center — and amplifies the activity of the amygdala, making emotions feel stronger and harder to regulate.</p>
+
+    <div style="text-align: center;">
+      <img src="images/sleep-dep.png" alt="Infographic on sleep deprivation and teen mental health"
+        style="width: 60%; max-width: 400px; height: auto; border-radius: 10px; margin-top: 20px;"
+        onclick="openModal('sleepModal')" />
+    </div>
+
+    <p><strong>Why does sleep matter?</strong></p>
+    <ul>
+      <li>🧹 The glymphatic system flushes out brain waste like beta-amyloid (linked to Alzheimer’s)</li>
+      <li>🧠 The hippocampus turns short-term memories into long-term ones</li>
+      <li>⚖️ Poor sleep weakens decision-making and intensifies emotional responses</li>
+      <li>📉 Sleep deprivation is linked to depression, suicidal thoughts, and difficulty focusing</li>
+    </ul>
+    <p><strong>🔬 Fun Fact:</strong> Just one night of poor sleep can impair cognition as much as a 0.08% blood alcohol level.</p>
+  </section>
+
+  <section class="section">
+    <h2>📱 Social Media</h2>
+    <p>Social media isn’t all bad, but excessive or problematic use (called PSMU) can hurt your mental health. Teens who spend over 3 hours per day on social media are more likely to experience feelings of loneliness, low self-esteem, and anxiety.</p>
+    <p>It’s not just time — it’s <em>how</em> you use it. Doomscrolling at night, comparing yourself to others, or constantly checking notifications can all contribute to mental exhaustion.</p>
+    <p>From a neuroscience perspective, social media triggers the brain’s reward center — the nucleus accumbens — releasing dopamine when we get likes, messages, or notifications. Over time, this can lead to compulsive behaviors and a disrupted sense of self-worth.</p>
+
+    <div style="text-align: center;">
+      <img src="images/social-media-brain.jpeg" alt="Illustration of brain activity and social media icons"
+        style="width: 60%; max-width: 400px; height: auto; border-radius: 10px; margin-top: 20px;"
+        onclick="openModal('socialModal')" />
+    </div>
+
+    <p>To help identify if social media might be affecting your mental health, scientists developed the <strong>Social Media Disorder (SMD) Scale</strong>. This tool assesses behaviors like preoccupation, withdrawal, tolerance, and conflict around social media. You can <a href="smd-survey.html"><strong>take the SMD Scale survey here</strong></a> to better understand your habits and get personalized feedback.</p>
+  </section>
+  <section class="section" style="background: #f9f9f9; padding: 30px 20px; border-top: 1px solid #ddd;">
+  <details style="max-width: 800px; margin: 0 auto; font-size: 1em;">
+    <summary style="font-size: 1.3em; font-weight: 600; cursor: pointer; padding: 10px; background: #eaeaea; border-radius: 6px; text-align: center;">
+      📚 Click to Learn More About the Science Behind This Page
+    </summary>
+    <div style="padding: 15px; background-color: #fff; border: 1px solid #ddd; border-radius: 0 0 6px 6px; margin-top: -1px;">
+      <p style="margin-bottom: 10px;">
+        Curious about the science behind sleep, social media, and teen mental health? Here are credible studies and reviews that informed the facts on this page:
+      </p>
+      <ul style="padding-left: 20px; list-style: square; font-size: 0.95em; line-height: 1.6;">
+        <!-- Sleep Studies -->
+        <li><a href="https://www.cdc.gov/pcd/issues/2023/22_0403.htm" target="_blank">CDC Study: Sleep Duration and Suicide Risk in Adolescents</a></li>
+        <li><a href="https://ijbnpa.biomedcentral.com/articles/10.1186/s12966-020-00976-x" target="_blank">Impact of Sleep on Academic and Mental Health in Teens</a></li>
+
+        <!-- Social Media & Mental Health -->
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/35973307/" target="_blank">Social Media Use and Sleep Disturbance Among Adolescents – PubMed</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33385767/" target="_blank">Systematic Review: Social Media, Sleep, and Mental Health</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10294999/" target="_blank">Scoping Review (2012–2022): Social Media and Depression</a></li>
+        <li><a href="https://www.cdc.gov/nchs/products/databriefs/db513.htm" target="_blank">CDC Data Brief: Screen Time and Adolescent Anxiety/Depression (2023)</a></li>
+        <li><a href="https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health" target="_blank">WHO Report: Teens, Screens & Mental Health (2024)</a></li>
+      </ul>
+    </div>
+  </details>
+  </section>
+
+  <footer>
+    <p>Created by Nila Natarajan | MAGIC STEM Internship 2025</p>
+  </footer>
+
+  <!-- Sleep Modal -->
+  <div id="sleepModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('sleepModal')">&times;</span>
+      <img src="images/sleep-dep.png" alt="Sleep infographic full screen" />
+      <p><strong>More Info:</strong> Sleep deprivation can weaken brain connectivity, cause increased emotional volatility, and even shrink brain volume over time. In teens, chronic lack of sleep can mimic symptoms of ADHD and impair judgment.</p>
+    </div>
+  </div>
+
+  <!-- Social Media Modal -->
+  <div id="socialModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('socialModal')">&times;</span>
+      <img src="images/social-media-brain.jpeg" alt="Social media brain image full screen" />
+      <p><strong>More Info:</strong> High screen time is associated with higher activity in brain regions linked to reward and addiction, while reducing gray matter in areas tied to impulse control and empathy. Tech companies design platforms to keep your brain hooked.</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach(modal => {
+        if (event.target === modal) modal.style.display = "none";
+      });
+    };
+  </script>
+</body>
+</html>

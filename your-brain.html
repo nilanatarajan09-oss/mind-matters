@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Brain | Mind Matters</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .brain-img {
+      display: block;
+      max-width: 90%;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .brain-img:hover {
+      transform: scale(1.02);
+    }
+    .section {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal-content {
+      margin: 5% auto;
+      background: #fff;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 700px;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #555;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mind Matters</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="your-brain.html">Your Brain</a>
+      <a href="habits.html">Your Habits</a>
+      <a href="healthyh.html">Healthy Habits</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>What Is the Brain?</h2>
+    <p>Your brain controls everything you do — from thoughts and emotions to actions and memories. It’s made up of billions of neurons that communicate using chemical and electrical signals. Your brain is always working, even when you’re asleep.</p>
+    <img src="images/brain-anatomy.jpg" alt="Labeled Brain Anatomy" class="brain-img" onclick="openModal('anatomyModal')">
+    <ul>
+      <li><span class="label">Frontal Lobe:</span> Planning, judgment, emotions, and problem-solving</li>
+      <li><span class="label">Parietal Lobe:</span> Touch, pressure, spatial awareness</li>
+      <li><span class="label">Occipital Lobe:</span> Vision processing</li>
+      <li><span class="label">Temporal Lobe:</span> Memory, hearing, language understanding</li>
+      <li><span class="label">Cerebellum:</span> Coordination, posture, balance</li>
+      <li><span class="label">Spinal Cord:</span> Sends signals between brain and body</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>The Teen Brain</h2>
+    <p>The teenage brain is still under construction. The <strong>prefrontal cortex</strong> — the part of your brain that helps you make decisions, regulate emotions, and think ahead — doesn’t fully develop until your mid-20s. Until then, the <strong>amygdala</strong>, which controls emotions and reactions, plays a bigger role in decision-making.</p>
+    <p>This is why teens may feel emotions more intensely or take more risks. But it’s also a powerful time for learning and growth: the brain is extra sensitive to experience, which means good habits and learning now can have lifelong effects.</p>
+    <p>For example, teens who get enough sleep and physical activity tend to show better brain development and emotional regulation. Too much stress, lack of sleep, or poor diet can slow brain growth in critical areas.</p>
+
+    <img src="images/new-brain-image.png" alt="Graph of Brain Maturation by Region and Age" class="brain-img" onclick="openModal('graphModal')">
+    <p style="text-align:center; font-size: 0.9em;">Graph showing how different brain regions mature at different rates. (Source: NIH)</p>
+  </section>
+
+  <footer>
+    <p>Created by Nila Natarajan | MAGIC STEM Internship 2025</p>
+  </footer>
+
+  <!-- Modals -->
+  <div id="anatomyModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('anatomyModal')">&times;</span>
+      <img src="images/brain-anatomy.jpg" alt="Labeled Brain Anatomy Fullscreen">
+      <p><strong>More Info:</strong> This diagram highlights major brain regions and their main roles in how you think, feel, and move.</p>
+    </div>
+  </div>
+
+  <div id="graphModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('graphModal')">&times;</span>
+      <img src="images/new-brain-image.png" alt="Fullscreen Brain Maturation Graph">
+      <p><strong>More Info:</strong> Emotional parts of the brain develop early, while self-control systems like the prefrontal cortex mature into the 20s. This can explain teenage impulsiveness and the importance of supportive environments.</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach(modal => {
+        if (event.target === modal) modal.style.display = "none";
+      });
+    };
+  </script>
+</body>
+</html>

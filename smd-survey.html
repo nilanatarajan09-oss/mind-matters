@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMD Survey | Mind Matters</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+  <style>
+    /* Your existing styles */
+    body {
+      font-family: 'Mali', cursive;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background-color: #a2d2ff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: white;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      padding: 20px;
+      background-color: #fff;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .survey-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .result {
+      background-color: #d0f0c0;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: none;
+    }
+    button {
+      background-color: #a2d2ff;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+      font-family: 'Mali', cursive;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #85caff;
+    }
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      border-radius: 0 0 16px 16px;
+    }
+
+    /* Result comparison section styles */
+    #results-comparison {
+      max-width: 600px;
+      margin: 40px auto 60px;
+      padding: 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      font-family: 'Mali', cursive;
+    }
+    #results-comparison h2 {
+      color: #2b2b2b;
+      margin-bottom: 15px;
+    }
+    #results-comparison p {
+      color: #444;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+    #comparison-form label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    #comparison-form input[type=number] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Mali', cursive;
+      font-size: 1em;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    #comparison-form button {
+      background-color: #a2d2ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Mali', cursive;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    #comparison-form button:hover {
+      background-color: #85caff;
+    }
+    #comparison-result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.1em;
+      color: #2b2b2b;
+      min-height: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mind Matters</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="your-brain.html">Your Brain</a>
+      <a href="habits.html">Your Habits</a>
+      <a href="healthyh.html">Healthy Habits</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="survey-container">
+      <h2>📋 Social Media Disorder Survey</h2>
+      <p>Answer honestly to see if your social media habits might be affecting your well-being.</p>
+
+      <form id="smd-form">
+        <!-- Questions inserted dynamically by JS -->
+        <button type="submit">See My Score</button>
+      </form>
+
+      <div class="result" id="result-box">
+        <h3>Your Results</h3>
+        <p id="result-text"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="results-comparison">
+    <h2>SMD Survey Results Comparison</h2>
+    <p>See how your results compare to national averages!</p>
+    
+    <form id="comparison-form">
+      <label for="user-score">Enter your SMD Score:</label>
+      <input type="number" id="user-score" name="user-score" min="0" max="100" required>
+      <button type="submit">Compare</button>
+    </form>
+    
+    <div id="comparison-result"></div>
+  </section>
+
+  <footer>
+    <p>Created by Nila Natarajan | MAGIC STEM Internship 2025</p>
+  </footer>
+
+  <script>
+    // Dynamically add questions on DOMContentLoaded
+    const questions = [
+      "Have you often found it difficult not to look at messages on social media when doing something else (e.g. school work)?",
+      "Have you regularly found that you can't think of anything else but the moment that you will be able to use social media again?",
+      "Have you often sat waiting until something happens on social media again?",
+      "Have you felt the need to use social media more and more often?",
+      "Have you felt the need to check messages on social media more and more often?",
+      "Have you regularly felt dissatisfied because you wanted to spend more time on social media?",
+      "Have you often felt tense or restless if you weren't able to look at your messages on social media?",
+      "Have you regularly felt angry or frustrated if you weren't able to use social media?",
+      "Have you often felt bad when you could not use social media?",
+      "Have you tried to reduce your use of social media, but failed?",
+      "Have you tried to spend less time on social media, but failed?",
+      "Have you been unable to stop using social media, even though others told you that you really should?",
+      "Have you regularly used social media to take your mind off your problems?",
+      "Have you often used social media so you didn't have to think about unpleasant things?",
+      "Have you often used social media to escape from negative feelings?",
+      "Have you often not paid attention at school, while doing homework or at work because you were using social media?",
+      "Have you regularly not had enough sleep because you were using social media too late at night?",
+      "Have you regularly had arguments with others because of your social media use?",
+      "Have you regularly lied to your parents or friends about the amount of time you spend on social media?",
+      "Have you regularly hidden your social media use from others?",
+      "Have you often used social media secretly?",
+      "Have you regularly devoted no attention to people around you (e.g. family or friends) because you were using social media?",
+      "Have you regularly had no interest in hobbies or other activities because you would rather use social media?",
+      "Have you regularly neglected other activities (e.g. hobbies, sport) because you wanted to use social media?",
+      "Have you had serious problems at school or at work because you were spending too much time on social media?",
+      "Have you had serious conflict with your parent(s) and sibling(s) because of your social media use?",
+      "Have you jeopardised or lost an important friendship or relationship because you were spending too much time on social media?"
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("smd-form");
+      questions.forEach((text, i) => {
+        const qNum = i + 1;
+        const div = document.createElement("div");
+        div.className = "question";
+        div.innerHTML = `
+          <p>${qNum}. ${text}</p>
+          <label><input type="radio" name="q${qNum}" value="1" required> Yes</label>
+          <label><input type="radio" name="q${qNum}" value="0"> No</label>
+        `;
+        form.insertBefore(div, form.querySelector("button"));
+      });
+    });
+
+    // Handle survey form submission
+    document.getElementById("smd-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      let score = 0;
+
+      for (let i = 1; i <= 27; i++) {
+        const input = form.querySelector(`input[name="q${i}"]:checked`);
+        if (input) score += parseInt(input.value);
+      }
+
+      const resultText = document.getElementById("result-text");
+      const resultBox = document.getElementById("result-box");
+      resultBox.style.display = "block";
+
+      if (score <= 4) {
+        resultText.innerText = `Your score is ${score}. Your social media use seems balanced. Great job!`;
+      } else if (score <= 10) {
+        resultText.innerText = `Your score is ${score}. You might be experiencing mild challenges with your social media use.`;
+      } else {
+        resultText.innerText = `Your score is ${score}. Your responses show signs of problematic use. Consider talking to a trusted adult or mental health professional.`;
+      }
+
+      resultBox.scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Handle comparison form submission
+    const nationalAverage = 50;  // Example national average
+    const nationalStdDev = 15;   // Example standard deviation
+
+    const comparisonForm = document.getElementById('comparison-form');
+    const resultDiv = document.getElementById('comparison-result');
+
+    comparisonForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const userScore = Number(document.getElementById('user-score').value);
+
+      if (isNaN(userScore) || userScore < 0 || userScore > 100) {
+        resultDiv.textContent = "Please enter a valid score between 0 and 100.";
+        resultDiv.style.color = '#d9534f'; // red for error
+        return;
+      }
+
+      let comparisonText = "";
+      if (userScore > nationalAverage + nationalStdDev) {
+        comparisonText = "Great job! Your score is above the national average.";
+        resultDiv.style.color = '#2a9d8f'; // a positive greenish color
+      } else if (userScore >= nationalAverage - nationalStdDev) {
+        comparisonText = "Your score is around the national average.";
+        resultDiv.style.color = '#e9c46a'; // a neutral yellowish color
+      } else {
+        comparisonText = "Your score is below the national average. There’s room to improve!";
+        resultDiv.style.color = '#e76f51'; // an alert reddish color
+      }
+
+      resultDiv.textContent = comparisonText;
+    });
+  </script>
+</body>
+</html>
