@@ -1,172 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Mind Matters</title>
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-              pinky: '#F9E5E9',
-              beige: '#FDF6EC',
-              mint: '#D9F3E4',
-              lilac: '#E9E5F9',
-              raspberry: '#D6456F',
-              ink: '#1F1F1F',
-            },
-          },
-        },
-        darkMode: 'class',
-      };
-    </script>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-beige text-ink dark:bg-ink dark:text-beige font-sans">
-    <!-- Header -->
-    <header class="bg-pinky dark:bg-ink sticky top-0 z-50 shadow">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-serif font-bold text-raspberry"
-          >Your Mind Matters</a
-        >
-        <nav class="hidden md:flex space-x-6 font-medium">
-          <a href="index.html" class="hover:text-raspberry">Home</a>
-          <a href="habits.html" class="hover:text-raspberry">Your Habits</a>
-          <a href="habit-hacks.html" class="hover:text-raspberry">Habit Hacks</a>
-          <a href="brain.html" class="hover:text-raspberry">Your Brain</a>
-          <a href="about.html" class="hover:text-raspberry">About</a>
-          <a href="smd-survey.html" class="hover:text-raspberry">Survey</a>
-        </nav>
-        <!-- Dark Mode Toggle -->
-        <button
-          id="theme-toggle"
-          class="ml-4 p-2 rounded-full bg-lilac dark:bg-mint transition"
-        >
-          🌙
-        </button>
-      </div>
-    </header>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mind Matters | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Hero -->
-    <section
-      class="relative bg-pinky dark:bg-ink text-center py-20 px-6 overflow-hidden"
-    >
-      <h1
-        class="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight text-ink dark:text-beige"
-      >
-        Take Control of Your <span class="text-raspberry">Mind & Habits</span>
-      </h1>
-      <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
-        Discover how sleep, screen time, and healthy routines shape your mental
-        health — and learn small changes that make a big difference.
-      </p>
-      <a
-        href="habits.html"
-        class="inline-block px-6 py-3 bg-raspberry text-white rounded-xl shadow hover:opacity-90 transition"
-        >Explore Habits</a
-      >
-      <div
-        class="absolute -bottom-16 -right-16 w-64 h-64 bg-mint rounded-full opacity-30 blur-3xl"
-      ></div>
-      <div
-        class="absolute -top-16 -left-16 w-64 h-64 bg-lilac rounded-full opacity-30 blur-3xl"
-      ></div>
-    </section>
+    body {
+      font-family: 'Mali', cursive;
+      background-color: #fef8f5;
+      color: #333;
+      line-height: 1.6;
+    }
 
-    <!-- Features -->
-    <section class="max-w-6xl mx-auto px-6 py-16 grid gap-8 md:grid-cols-3">
-      <div
-        class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col"
-      >
-        <h3 class="font-serif text-xl mb-3 text-raspberry">Your Habits</h3>
-        <p class="flex-grow">
-          Learn the science behind sleep, screen time, and activity levels —
-          with data from real studies.
-        </p>
-        <a
-          href="habits.html"
-          class="mt-4 text-raspberry font-medium hover:underline"
-          >Read More →</a
-        >
-      </div>
-      <div
-        class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col"
-      >
-        <h3 class="font-serif text-xl mb-3 text-raspberry">Habit Hacks</h3>
-        <p class="flex-grow">
-          Quick, actionable solutions teens can use daily to build healthier
-          routines.
-        </p>
-        <a
-          href="habit-hacks.html"
-          class="mt-4 text-raspberry font-medium hover:underline"
-          >Discover Hacks →</a
-        >
-      </div>
-      <div
-        class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col"
-      >
-        <h3 class="font-serif text-xl mb-3 text-raspberry">Your Brain</h3>
-        <p class="flex-grow">
-          Explore how habits affect your brain chemistry and mental health with
-          science-based insights.
-        </p>
-        <a
-          href="brain.html"
-          class="mt-4 text-raspberry font-medium hover:underline"
-          >Learn More →</a
-        >
-      </div>
-    </section>
+    header {
+      background-color: #a2d2ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-    <!-- Footer -->
-    <footer class="bg-pinky dark:bg-ink py-8 mt-16">
-      <div class="max-w-6xl mx-auto px-6 text-center text-sm">
-        <p>
-          © 2025 Your Mind Matters • Built by Nila for MAGIC STEM Internship •
-          All rights reserved
-        </p>
-      </div>
-    </footer>
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
 
-    <!-- Dark Mode Script -->
-    <script>
-      const toggleBtn = document.getElementById("theme-toggle");
-      const rootEl = document.documentElement;
+    nav a:hover {
+      color: #ffe0f0;
+    }
 
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        rootEl.classList.add("dark");
-      }
+    .hero {
+      background: linear-gradient(135deg, #fcd5ce, #fff1e6);
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 16px;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
 
-      toggleBtn.addEventListener("click", () => {
-        rootEl.classList.toggle("dark");
-        if (rootEl.classList.contains("dark")) {
-          localStorage.theme = "dark";
-          toggleBtn.textContent = "☀️";
-        } else {
-          localStorage.theme = "light";
-          toggleBtn.textContent = "🌙";
-        }
-      });
+    .hero h2 {
+      color: #333;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
 
-      if (rootEl.classList.contains("dark")) {
-        toggleBtn.textContent = "☀️";
-      }
-    </script>
-  </body>
+    .hero p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      margin: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #2b2b2b;
+    }
+
+    .section ul {
+      list-style-type: disc;
+      padding-left: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #444;
+      font-size: 1.1em;
+    }
+
+    .section li {
+      margin-bottom: 12px;
+    }
+
+    .why-this-matters {
+      background-color: #e4c1f9;
+      padding: 40px 30px;
+      margin: 20px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .why-this-matters h3 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #2b2b2b;
+    }
+
+    .why-this-matters p {
+      max-width: 750px;
+      margin: 0 auto 20px;
+      font-size: 1.1em;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #e0e0e0;
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      border-radius: 0 0 16px 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mind Matters</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="your-brain.html">Your Brain</a>
+      <a href="habits.html">Your Habits</a>
+      <a href="healthyh.html">Healthy Habits</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Mind Matters</h2>
+    <p>How do your habits affect your brain? This site explores how sleep, screen time, and social media shape teen brain health. Backed by science, built for teens.</p>
+    <img src="images/teens-on-phones.jpg">
+  </section>
+
+  <section class="why-this-matters">
+    <h3>Why This Matters</h3>
+    <p>Teen mental health challenges are rising from 2021–2023, over 40% of high school students reported persistent sadness. Factors like screen time, digital overload, and lack of sleep are more than lifestyle issues they’re public health concerns.</p>
+    <p>Mind Matters is here to give you the facts, tools, and understanding to care for your brain and your mental health. Because mental health isn’t extra it’s essential.</p>
+  </section>
+
+  <footer>
+    <p>Created by Nila Natarajan | MAGIC STEM Internship 2025</p>
+  </footer>
+</body>
 </html>
